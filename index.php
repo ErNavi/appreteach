@@ -1,31 +1,9 @@
+<?php 
+require_once __DIR__ . '/facebook-sdk-v5/autoload.php';
 
-<html>
-<head>
-<title>Appreteach</title>
-</head>
-<body>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1480036835633971',
-      xfbml      : true,
-      version    : 'v2.4'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-<div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>
-</body>
-</html>
+$fb = new Facebook\Facebook([
+    'app_id' => '1480036835633971',
+    'app_secret' => '81daf23dbc2099501a2c1dceb1e7856e',
+    'default_graph_version' => 'v2.2',
+]);
+?>
