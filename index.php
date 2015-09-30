@@ -15,7 +15,7 @@ try {
   $response = $fb->get('/me');
   //$userNode = $response->getGraphUser();
   //$userNode = $response->getDecodedBody();
-  $userNode = $response->getGraphNode();
+  $userNode = $response->getGraphUser();
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
   // When Graph returns an error
   echo 'Graph returned an error: ' . $e->getMessage();
@@ -27,5 +27,7 @@ try {
 }
 
 //echo 'Logged in as ' . $userNode->getName();
-echo 'Logged in as ' . var_dump($userNode->getFieldNames());
+//echo 'Logged in as ' . var_dump($userNode->getPicture());
+echo 'Logged in as ' . $userNode->getPicture();
+
 ?>
