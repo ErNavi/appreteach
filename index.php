@@ -15,7 +15,7 @@ try {
   $response = $fb->get('/me');
   //$userNode = $response->getGraphUser();
   //$userNode = $response->getDecodedBody();
-  $userNode = $response->getGraphPicture();
+  $userNode = $response->getGraphNode();
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
   // When Graph returns an error
   echo 'Graph returned an error: ' . $e->getMessage();
