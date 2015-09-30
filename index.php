@@ -15,7 +15,7 @@ try {
   $response = $fb->get('/me');
   $userNode = $response->getGraphUser();
   $userId = $userNode->getId();
-  $userFirstName = $userNode->getFirstName();
+  $userName = $userNode->getName();
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
   // When Graph returns an error
   echo 'Graph returned an error: ' . $e->getMessage();
@@ -30,7 +30,7 @@ try {
 
 <html>
 <body>
-<h2><?php echo "Welcome ".$userFirstName.". You have come to appreciate your teachers."?></h2>
+<h2><?php echo "Welcome ".$userName.". You have come to appreciate your teachers."?></h2>
 <img alt="profile" src="<?php echo "https://graph.facebook.com/".$userId."/picture?type=normal" ?>"/>
 </body>
 </html>
