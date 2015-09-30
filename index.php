@@ -30,7 +30,7 @@ try {
 
 <html>
 <body>
-<h2><?php echo "Welcome ".$userName.". You have come to appreciate your teachers."?></h2>
+<h4><?php echo "Welcome ".$userName.". You have come to appreciate your teachers."?></h4>
 <img alt="profile" src="<?php echo "https://graph.facebook.com/".$userId."/picture?type=normal" ?>"/>
 </body>
 </html>
