@@ -14,7 +14,8 @@ $fb->setDefaultAccessToken($_SESSION['facebook_access_token']);
 try {
   $response = $fb->get('/me');
   //$userNode = $response->getGraphUser();
-  $userNode = $response->getDecodedBody();
+  //$userNode = $response->getDecodedBody();
+  $userNode = $response->getUrl();
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
   // When Graph returns an error
   echo 'Graph returned an error: ' . $e->getMessage();
@@ -26,5 +27,5 @@ try {
 }
 
 //echo 'Logged in as ' . $userNode->getName();
-echo 'Logged in as ' . var_dump($response);
+echo 'Logged in as ' . var_dump($userNode);
 ?>
