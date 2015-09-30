@@ -25,5 +25,6 @@ try {
   exit;
 }
 
-echo 'Logged in as ' . $userNode->getName();
+//echo 'Logged in as ' . $userNode->getName();
+echo 'Logged in as ' . var_dump($userNode);
 ?>
