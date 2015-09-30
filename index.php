@@ -28,7 +28,8 @@ echo 'Logged in as ' . $userId;
 
 try {
     $response = $fb->get('/'.$userId.'/picture');
-    $picture = $response->execute()->getGraphObject();
+    $picture = $response->execute();
+    $graphObject = $picture->getGraphObject();
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
     // When Graph returns an error
     echo 'Graph returned an error: ' . $e->getMessage();
@@ -38,6 +39,6 @@ try {
     echo 'Facebook SDK returned an error: ' . $e->getMessage();
     exit;
 }
-echo 'Logged in as ' . var_dump($response);
+echo 'Logged in as ' . var_dump($graphObject);
 
 ?>
