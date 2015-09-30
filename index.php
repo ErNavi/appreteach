@@ -33,6 +33,6 @@ echo 'Logged in as ' . $userId;
 
 <html>
 <body>
-<img alt="profile" src="<?php echo "https://graph.facebook.com/".$userId."/picture?type=large" ?>"/>
+<img alt="profile" src="<?php echo "https://graph.facebook.com/".$userId."/picture?type=medium" ?>"/>
 </body>
 </html>
