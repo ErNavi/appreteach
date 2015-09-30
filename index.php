@@ -6,7 +6,7 @@ $fb = new Facebook\Facebook([
     'app_secret' => '81daf23dbc2099501a2c1dceb1e7856e',
     'default_graph_version' => 'v2.2',
 ]);
-
+$helper = $fb->getRedirectLoginHelper();
 // First check if this is an existing PHP session
 if ( isset( $_SESSION ) && isset( $_SESSION['facebook_access_token'] ) ) {
     // create new session from the existing PHP sesson
