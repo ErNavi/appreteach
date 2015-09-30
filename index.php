@@ -27,7 +27,7 @@ try {
 }
 
 //echo 'Logged in as ' . $userNode->getName();
-//echo 'Logged in as ' . var_dump($userNode->getPicture());
+echo 'Logged in as ' . var_dump($userNode->getPicture());
 echo 'Logged in as ' . $userNode->getPicture();
 
 ?>
