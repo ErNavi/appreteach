@@ -13,9 +13,8 @@ $fb->setDefaultAccessToken($_SESSION['facebook_access_token']);
 
 try {
   $response = $fb->get('/me');
-  //$userNode = $response->getGraphUser();
-  //$userNode = $response->getDecodedBody();
   $userNode = $response->getGraphUser();
+  $userId = $userNode->getId();
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
   // When Graph returns an error
   echo 'Graph returned an error: ' . $e->getMessage();
@@ -25,9 +24,20 @@ try {
   echo 'Facebook SDK returned an error: ' . $e->getMessage();
   exit;
 }
+echo 'Logged in as ' . $userId;
 
-//echo 'Logged in as ' . $userNode->getName();
-echo 'Logged in as ' . var_dump($userNode->getPicture());
-echo 'Logged in as ' . $userNode->getPicture();
+try {
+    $response = $fb->get('/'.$userId.'/picture');
+    $picture = $response->execute()->getGraphObject();
+} catch(Facebook\Exceptions\FacebookResponseException $e) {
+    // When Graph returns an error
+    echo 'Graph returned an error: ' . $e->getMessage();
+    exit;
+} catch(Facebook\Exceptions\FacebookSDKException $e) {
+    // When validation fails or other local issues
+    echo 'Facebook SDK returned an error: ' . $e->getMessage();
+    exit;
+}
+echo 'Logged in as ' . var_dump($picture);
 
 ?>
