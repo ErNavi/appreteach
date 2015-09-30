@@ -24,15 +24,11 @@ try {
   echo 'Facebook SDK returned an error: ' . $e->getMessage();
   exit;
 }
-echo 'Logged in as ' . $userId;
-
-
-//echo "https://graph.facebook.com/".$userId."/picture";
 
 ?>
 
 <html>
 <body>
-<img alt="profile" src="<?php echo "https://graph.facebook.com/".$userId."/picture?type=large" ?>"/>
+<img alt="profile" src="<?php echo "https://graph.facebook.com/".$userId."/picture?type=normal" ?>"/>
 </body>
 </html>
