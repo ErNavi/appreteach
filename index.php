@@ -7,5 +7,9 @@ $fb = new Facebook\Facebook([
     'default_graph_version' => 'v2.2',
 ]);
 
+if(empty($_SESSION['facebook_access_token'])){
+   header('Location: login.php') ;
+   }
+
 echo $_SESSION['facebook_access_token'];
 ?>
