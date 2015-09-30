@@ -27,6 +27,12 @@ try {
 echo 'Logged in as ' . $userId;
 
 
-echo "https://graph.facebook.com/".$userId."/picture";
+//echo "https://graph.facebook.com/".$userId."/picture";
 
 ?>
+
+<html>
+<body>
+<img alt="profile" src="<php echo "https://graph.facebook.com/".$userId."/picture" ?>">
+</body>
+</html>
